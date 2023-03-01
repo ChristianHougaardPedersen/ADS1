@@ -48,9 +48,7 @@ public class PostfixExpressionCalculatorImpl implements PostfixExpressionCalcula
                     token = tokensList.remove(0);
                 }
 
-                Operand newValue = calculate((Operand) stack.pop(), (Operand) stack.pop(), (Operator) token);
-                System.out.println("NEW VALUE: " + newValue.getValue());
-                stack.push(newValue);
+                stack.push(calculate((Operand) stack.pop(), (Operand) stack.pop(), (Operator) token));
             }
 
             return getResult();

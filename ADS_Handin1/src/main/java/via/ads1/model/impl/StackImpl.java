@@ -1,13 +1,12 @@
 package via.ads1.model.impl;
 
 import via.ads1.model.ADTs.StackADT;
-import via.ads1.model.Operand;
 
 public class StackImpl<T> implements StackADT<T> {
     private final LinkedListImpl<T> stack;
 
     public StackImpl() {
-        stack = new LinkedListImpl<T>();
+        stack = new LinkedListImpl<>();
     }
 
     @Override
@@ -23,9 +22,6 @@ public class StackImpl<T> implements StackADT<T> {
     @Override
     public void push(T element) {
         stack.addToHead(element);
-
-        Operand op = (Operand) element;
-        System.out.println("NEW HEAD: " + op.getValue());
     }
 
     @Override
